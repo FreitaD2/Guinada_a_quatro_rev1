@@ -195,14 +195,14 @@ const COUPLE_GYM_MONTH = 24;
 
 const couples = [
   {
-    id:'casal1', name:'Dani & Leonardo', bg:'#EEEDFE', fg:'#3C3489',
-    p1:{id:'dani', name:'Dani',     course:'Ciências da Computação', initials:'DA', bg:'#EEEDFE', fg:'#3C3489'},
-    p2:{id:'leo',  name:'Leonardo', course:'Engenharia Mecânica',    initials:'LE', bg:'#E1F5EE', fg:'#085041'},
+    id:'casal1', name:'Dani & Leo', bg:'#EEEDFE', fg:'#3C3489',
+    p1:{id:'dani', name:'Dani', course:'Ciências da Computação', initials:'DA', bg:'#EEEDFE', fg:'#3C3489'},
+    p2:{id:'leo',  name:'Leo',  course:'Engenharia Mecânica',    initials:'LE', bg:'#E1F5EE', fg:'#085041'},
   },
   {
-    id:'casal2', name:'Gabriele & Joel', bg:'#E1F5EE', fg:'#085041',
-    p1:{id:'gabi', name:'Gabriele', course:'Logística', initials:'GA', bg:'#FAEEDA', fg:'#412402'},
-    p2:{id:'joel', name:'Joel',     course:'Logística', initials:'JO', bg:'#FAECE7', fg:'#4A1B0C'},
+    id:'casal2', name:'Gabi & Joel', bg:'#E1F5EE', fg:'#085041',
+    p1:{id:'gabi', name:'Gabi', course:'Logística', initials:'GA', bg:'#FAEEDA', fg:'#412402'},
+    p2:{id:'joel', name:'Joel', course:'Logística', initials:'JO', bg:'#FAECE7', fg:'#4A1B0C'},
   },
 ];
 
@@ -440,7 +440,7 @@ function cycleStatus(pid,sem,field) {
 // Score calculation
 function calcScore(couple,month) {
   const mw=monthWeeks(month);
-  const sem=semOf((month-1)*4+1);
+  const sem=semOf(month*4); // last week of that month determines semester
   let pts=0;
 
   // Gym
@@ -478,7 +478,7 @@ function renderPlacar() {
   const c=document.getElementById('placar-container'); c.innerHTML='';
   const scores=couples.map(couple=>({couple,pts:calcScore(couple,m)})).sort((a,b)=>b.pts-a.pts);
   const mw=monthWeeks(m);
-  const sem=semOf(currentWeek);
+  const sem=semOf(m*4); // last week of current month determines semester
 
   scores.forEach((s,rank)=>{
     const cp=s.couple;
