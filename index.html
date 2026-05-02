@@ -21,7 +21,7 @@
   .site-header{background:var(--surface);border-bottom:1px solid var(--border);padding:1.25rem 1.5rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10;}
   .site-header h1{font-size:17px;font-weight:600;letter-spacing:-0.02em;}
   .week-pill{background:var(--purple-bg);color:var(--purple-fg);font-size:12px;font-weight:500;padding:4px 12px;border-radius:20px;}
-  .tabs-bar{background:var(--surface);border-bottom:1px solid var(--border);padding:0 1.5rem;display:flex;gap:0;overflow-x:auto;}
+  .tabs-bar{background:var(--surface);border-bottom:1px solid var(--border);padding:0 1.5rem;display:flex;overflow-x:auto;}
   .tab{padding:12px 16px;font-size:13px;font-weight:500;cursor:pointer;color:var(--text-muted);border-bottom:2px solid transparent;white-space:nowrap;background:none;border-top:none;border-left:none;border-right:none;font-family:inherit;}
   .tab.active{color:var(--purple-fg);border-bottom-color:var(--purple-mid);}
   .main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 4rem;}
@@ -54,31 +54,22 @@
   .bar-fill{height:100%;border-radius:6px;background:var(--teal-mid);transition:width .3s;}
   .bar-fill.warn{background:var(--amber-mid);}
   .bar-fill.bad{background:var(--coral-mid);}
-
-  /* MONTHLY SECTION */
   .month-section{border-top:2px solid var(--purple-mid);margin-top:2px;}
   .month-section-title{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--purple-fg);background:var(--purple-bg);padding:5px 1.25rem;display:flex;align-items:center;gap:6px;}
   .month-section-title span{font-size:10px;font-weight:400;color:var(--purple-mid);}
-
-  /* BIOIMP */
   .bioimp-row{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:6px 0;border-top:1px solid var(--border);flex-wrap:wrap;}
   .bioimp-inputs{display:flex;align-items:center;gap:6px;}
   .bioimp-inputs input{width:64px;padding:4px 6px;border:1px solid var(--border-strong);border-radius:6px;font-size:13px;font-family:'DM Mono',monospace;background:var(--surface2);color:var(--text);text-align:center;}
   .bioimp-inputs input:focus{outline:2px solid var(--purple-mid);background:var(--surface);}
-  .bioimp-sep{font-size:12px;color:var(--text-muted);}
   .bioimp-result{font-size:12px;padding:3px 9px;border-radius:10px;font-weight:500;white-space:nowrap;}
   .bioimp-result.hit{background:var(--teal-light);color:var(--teal-fg);}
   .bioimp-result.miss{background:var(--coral-bg);color:var(--coral-fg);}
   .bioimp-result.empty{background:var(--surface2);color:var(--text-faint);}
-
-  /* SEMESTRAL STATUS */
   .status-cycle{display:flex;align-items:center;gap:6px;}
   .status-pill{font-size:11px;padding:3px 9px;border-radius:10px;font-weight:500;cursor:pointer;border:none;font-family:inherit;}
   .status-null{background:var(--surface2);color:var(--text-muted);}
   .status-pend{background:var(--amber-bg);color:var(--amber-fg);}
   .status-done{background:var(--teal-light);color:var(--teal-fg);}
-
-  /* PLACAR */
   .score-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.25rem;margin-bottom:10px;}
   .score-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
   .score-rank{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:600;flex-shrink:0;}
@@ -89,8 +80,6 @@
   .prize-box .t{font-size:13px;font-weight:600;color:var(--teal-fg);margin-bottom:3px;}
   .prize-box .d{font-size:13px;color:#0F6E56;}
   .tie-note{text-align:center;font-size:13px;color:var(--text-muted);background:var(--surface2);border-radius:var(--radius);padding:10px;margin-top:8px;}
-
-  /* TRILHA */
   .trail-section-title{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted);margin:1.5rem 0 8px;}
   .trail-person{margin-bottom:12px;}
   .trail-person-label{font-size:12px;color:var(--text-muted);margin-bottom:5px;}
@@ -104,8 +93,6 @@
   .legend{display:flex;gap:14px;margin-top:12px;font-size:12px;color:var(--text-muted);flex-wrap:wrap;}
   .legend span{display:flex;align-items:center;gap:5px;}
   .legend i{display:inline-block;width:10px;height:10px;border-radius:2px;}
-
-  /* REGRAS */
   .rule-block{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.25rem;margin-bottom:10px;}
   .rule-block-title{font-size:14px;font-weight:600;margin-bottom:10px;}
   .rule-item{display:flex;gap:10px;font-size:13px;color:var(--text-muted);padding:5px 0;border-top:1px solid var(--border);line-height:1.5;}
@@ -113,13 +100,26 @@
   .rule-icon{flex-shrink:0;font-size:13px;margin-top:1px;}
   .rule-pts{font-size:11px;background:var(--purple-bg);color:var(--purple-fg);padding:2px 7px;border-radius:10px;font-weight:500;white-space:nowrap;display:inline-block;margin-left:4px;}
   .consequence-box{background:#FEF3CD;border:1px solid #FAC775;border-radius:var(--radius);padding:10px 1.25rem;margin-top:10px;font-size:13px;color:#6B4400;}
+  .loading-overlay{position:fixed;inset:0;background:rgba(248,247,244,.85);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;z-index:100;font-size:14px;color:var(--text-muted);}
+  .spinner{width:28px;height:28px;border:3px solid var(--border);border-top-color:var(--purple-mid);border-radius:50%;animation:spin .7s linear infinite;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+  .sync-btn{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--purple-fg);background:var(--purple-bg);border:none;border-radius:10px;padding:3px 10px;cursor:pointer;font-family:inherit;}
+  .sync-btn:disabled{opacity:.5;cursor:default;}
 </style>
 </head>
 <body>
 
+<div class="loading-overlay" id="loading">
+  <div class="spinner"></div>
+  <span>Carregando dados compartilhados…</span>
+</div>
+
 <header class="site-header">
   <h1>Guinada a Quatro 🏁</h1>
-  <span class="week-pill" id="week-pill">Semana 1 de 52</span>
+  <div style="display:flex;align-items:center;gap:8px;">
+    <button class="sync-btn" id="sync-btn" onclick="syncAll()">↻ Sync</button>
+    <span class="week-pill" id="week-pill">Semana 1 de 52</span>
+  </div>
 </header>
 
 <div class="tabs-bar">
@@ -130,8 +130,6 @@
 </div>
 
 <div class="main">
-
-  <!-- REGISTRO -->
   <div id="tab-registro">
     <div class="week-nav">
       <button id="btn-prev" onclick="changeWeek(-1)">&#8592;</button>
@@ -143,8 +141,6 @@
     </div>
     <div id="registro-container"></div>
   </div>
-
-  <!-- PLACAR -->
   <div id="tab-placar" style="display:none">
     <div id="placar-container"></div>
     <div class="prize-box">
@@ -152,13 +148,7 @@
       <div class="d">O casal com mais pontos no mês custeia a saída do outro casal. Em empate, cada casal custeia o próprio programa.</div>
     </div>
   </div>
-
-  <!-- TRILHA -->
-  <div id="tab-trilha" style="display:none">
-    <div id="trilha-container"></div>
-  </div>
-
-  <!-- REGRAS -->
+  <div id="tab-trilha" style="display:none"><div id="trilha-container"></div></div>
   <div id="tab-regras" style="display:none">
     <div class="rule-block">
       <div class="rule-block-title">Academia</div>
@@ -183,187 +173,160 @@
       <div class="rule-item"><span class="rule-icon">🤝</span><span>Em caso de empate, cada casal custeia o próprio programa.</span></div>
     </div>
   </div>
-
 </div>
 
 <script>
-const TOTAL_WEEKS = 52;
-const START_WEEK  = 19;
-const GYM_GOAL    = 3;
-const ENG_GOAL    = 7;
-const COUPLE_GYM_MONTH = 24;
+const TOTAL_WEEKS=52, START_WEEK=19, GYM_GOAL=3, ENG_GOAL=7, COUPLE_GYM_MONTH=24;
 
-const couples = [
-  {
-    id:'casal1', name:'Dani & Leo', bg:'#EEEDFE', fg:'#3C3489',
-    p1:{id:'dani', name:'Dani', course:'Ciências da Computação', initials:'DA', bg:'#EEEDFE', fg:'#3C3489'},
-    p2:{id:'leo',  name:'Leo',  course:'Engenharia Mecânica',    initials:'LE', bg:'#E1F5EE', fg:'#085041'},
-  },
-  {
-    id:'casal2', name:'Gabi & Joel', bg:'#E1F5EE', fg:'#085041',
-    p1:{id:'gabi', name:'Gabi', course:'Logística', initials:'GA', bg:'#FAEEDA', fg:'#412402'},
-    p2:{id:'joel', name:'Joel', course:'Logística', initials:'JO', bg:'#FAECE7', fg:'#4A1B0C'},
-  },
+const couples=[
+  {id:'casal1',name:'Dani & Leo',bg:'#EEEDFE',fg:'#3C3489',
+   p1:{id:'dani',name:'Dani',course:'Ciências da Computação',initials:'DA',bg:'#EEEDFE',fg:'#3C3489'},
+   p2:{id:'leo', name:'Leo', course:'Engenharia Mecânica',   initials:'LE',bg:'#E1F5EE',fg:'#085041'}},
+  {id:'casal2',name:'Gabi & Joel',bg:'#E1F5EE',fg:'#085041',
+   p1:{id:'gabi',name:'Gabi',course:'Logística',initials:'GA',bg:'#FAEEDA',fg:'#412402'},
+   p2:{id:'joel',name:'Joel',course:'Logística',initials:'JO',bg:'#FAECE7',fg:'#4A1B0C'}},
 ];
 
-let currentWeek = 1;
+// ── Shared storage ──────────────────────────────────────────────
+// Single key holds ALL data: { week:{pid_w: {...}}, bio:{pid_m:{...}}, sem:{pid_s:{...}} }
+const STORE_KEY = 'g4_shared_data';
+let db = { week:{}, bio:{}, sem:{} };
 
-// Storage keys
-function wk(pid,w)      { return `g4_${pid}_w${w}`; }
-function bk(pid,m)      { return `g4_bio_${pid}_m${m}`; }
-function semk(pid,sem)  { return `g4_sem_${pid}_s${sem}`; }
+async function loadDB() {
+  try {
+    const r = await window.storage.get(STORE_KEY, true);
+    if(r && r.value) db = JSON.parse(r.value);
+  } catch(e) { /* first run */ }
+}
 
-function loadW(pid,w)   { try{return JSON.parse(localStorage.getItem(wk(pid,w))||'null');}catch{return null;} }
-function saveW(pid,w,d) { localStorage.setItem(wk(pid,w),JSON.stringify(d)); }
-function loadB(pid,m)   { try{return JSON.parse(localStorage.getItem(bk(pid,m))||'null');}catch{return null;} }
-function saveB(pid,m,d) { localStorage.setItem(bk(pid,m),JSON.stringify(d)); }
-function loadS(pid,sem) { try{return JSON.parse(localStorage.getItem(semk(pid,sem))||'null');}catch{return null;} }
-function saveS(pid,sem,d){ localStorage.setItem(semk(pid,sem),JSON.stringify(d)); }
+let saveTimer = null;
+function scheduleSave() {
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(async ()=>{
+    const btn=document.getElementById('sync-btn');
+    btn.disabled=true; btn.textContent='↻ Salvando…';
+    try { await window.storage.set(STORE_KEY, JSON.stringify(db), true); }
+    catch(e){ console.error('save error',e); }
+    btn.disabled=false; btn.textContent='↻ Sync';
+  }, 600);
+}
 
-function emptyW()  { return {gym:[false,false,false], eng:Array(7).fill(false)}; }
-function emptyB()  { return {meta:'', real:''}; }
-function emptyS()  { return {course:0, faculty:0}; } // 0=não iniciado,1=em andamento,2=concluído
+async function syncAll() {
+  const btn=document.getElementById('sync-btn');
+  btn.disabled=true; btn.textContent='↻ Buscando…';
+  await loadDB();
+  btn.disabled=false; btn.textContent='↻ Sync';
+  renderRegistro();
+  renderByTab();
+}
 
-function monthOf(w)     { return Math.ceil(w/4); }
-function semOf(w)       { return w<=26?1:2; }
+// Accessors
+function getW(pid,w)      { return db.week[`${pid}_${w}`] || emptyW(); }
+function setW(pid,w,d)    { db.week[`${pid}_${w}`]=d; scheduleSave(); }
+function getB(pid,m)      { return db.bio[`${pid}_${m}`]  || emptyB(); }
+function setB(pid,m,d)    { db.bio[`${pid}_${m}`]=d; scheduleSave(); }
+function getS(pid,sem)    { return db.sem[`${pid}_${sem}`] || emptyS(); }
+function setS(pid,sem,d)  { db.sem[`${pid}_${sem}`]=d; scheduleSave(); }
+
+function emptyW() { return {gym:[false,false,false],eng:Array(7).fill(false)}; }
+function emptyB() { return {meta:'',real:''}; }
+function emptyS() { return {course:0,faculty:0}; }
+
+function monthOf(w)   { return Math.ceil(w/4); }
+function semOf(w)     { return w<=26?1:2; }
 function isLastWeekOfMonth(w) { return w%4===0||w===TOTAL_WEEKS; }
-function monthWeeks(m)  { const s=(m-1)*4+1,e=Math.min(s+3,TOTAL_WEEKS); return Array.from({length:e-s+1},(_,i)=>s+i); }
+function monthWeeks(m){ const s=(m-1)*4+1,e=Math.min(s+3,TOTAL_WEEKS); return Array.from({length:e-s+1},(_,i)=>s+i); }
 
-// Status labels / styles for semestral
-const semStatus = [
-  {label:'Não iniciado', cls:'status-null'},
-  {label:'Em andamento', cls:'status-pend'},
-  {label:'Concluído',    cls:'status-done'},
-];
+const semStatus=[{label:'Não iniciado',cls:'status-null'},{label:'Em andamento',cls:'status-pend'},{label:'Concluído',cls:'status-done'}];
+
+let currentWeek=1, currentTab='registro';
 
 function setTab(name) {
-  ['registro','placar','trilha','regras'].forEach(t=>{
-    document.getElementById('tab-'+t).style.display = t===name?'':'none';
-  });
-  document.querySelectorAll('.tab').forEach((el,i)=>{
-    el.classList.toggle('active',['registro','placar','trilha','regras'][i]===name);
-  });
-  if(name==='placar') renderPlacar();
-  if(name==='trilha') renderTrilha();
+  ['registro','placar','trilha','regras'].forEach(t=>document.getElementById('tab-'+t).style.display=t===name?'':'none');
+  document.querySelectorAll('.tab').forEach((el,i)=>el.classList.toggle('active',['registro','placar','trilha','regras'][i]===name));
+  currentTab=name;
+  renderByTab();
+}
+function renderByTab() {
+  if(currentTab==='placar') renderPlacar();
+  if(currentTab==='trilha') renderTrilha();
 }
 
 function changeWeek(d) {
-  currentWeek = Math.max(1,Math.min(TOTAL_WEEKS,currentWeek+d));
+  currentWeek=Math.max(1,Math.min(TOTAL_WEEKS,currentWeek+d));
   renderWeek();
 }
 
 function renderWeek() {
-  const real = START_WEEK+currentWeek-1;
-  const m = monthOf(currentWeek);
-  const isLast = isLastWeekOfMonth(currentWeek);
-  document.getElementById('week-pill').textContent = `Semana ${currentWeek} de ${TOTAL_WEEKS}`;
-  document.getElementById('week-main-label').textContent = `Semana ${currentWeek}${isLast?' — última do mês':''}`;
-  document.getElementById('week-sub-label').textContent = `Semana ${real} do ano · Mês ${m}`;
-  document.getElementById('btn-prev').disabled = currentWeek===1;
-  document.getElementById('btn-next').disabled = currentWeek===TOTAL_WEEKS;
+  const real=START_WEEK+currentWeek-1, m=monthOf(currentWeek), isLast=isLastWeekOfMonth(currentWeek);
+  document.getElementById('week-pill').textContent=`Semana ${currentWeek} de ${TOTAL_WEEKS}`;
+  document.getElementById('week-main-label').textContent=`Semana ${currentWeek}${isLast?' — última do mês':''}`;
+  document.getElementById('week-sub-label').textContent=`Semana ${real} do ano · Mês ${m}`;
+  document.getElementById('btn-prev').disabled=currentWeek===1;
+  document.getElementById('btn-next').disabled=currentWeek===TOTAL_WEEKS;
   renderRegistro();
 }
 
 function renderRegistro() {
-  const cont = document.getElementById('registro-container');
-  cont.innerHTML='';
-  const m = monthOf(currentWeek);
-  const mw = monthWeeks(m);
-  const sem = semOf(currentWeek);
-  const isLast = isLastWeekOfMonth(currentWeek);
+  const cont=document.getElementById('registro-container'); cont.innerHTML='';
+  const m=monthOf(currentWeek), mw=monthWeeks(m), sem=semOf(currentWeek), isLast=isLastWeekOfMonth(currentWeek);
 
   couples.forEach(couple=>{
     let coupleGym=0;
-    mw.forEach(w=>[couple.p1,couple.p2].forEach(p=>{
-      const d=loadW(p.id,w)||emptyW(); coupleGym+=d.gym.filter(Boolean).length;
-    }));
-    const gymPct = Math.min(100,Math.round(coupleGym/COUPLE_GYM_MONTH*100));
-    const pts = calcScore(couple,m);
+    mw.forEach(w=>[couple.p1,couple.p2].forEach(p=>{ coupleGym+=getW(p.id,w).gym.filter(Boolean).length; }));
+    const gymPct=Math.min(100,Math.round(coupleGym/COUPLE_GYM_MONTH*100));
+    const pts=calcScore(couple,m);
+    const block=document.createElement('div'); block.className='couple-block';
 
-    const block = document.createElement('div'); block.className='couple-block';
-
-    // Header
     const hdr=document.createElement('div'); hdr.className='couple-header';
     hdr.style.cssText=`background:${couple.bg}30`;
-    hdr.innerHTML=`
-      <div>
-        <div class="couple-title" style="color:${couple.fg}">${couple.name}</div>
-        <div class="couple-sub">Academia mês ${m}: ${coupleGym}/${COUPLE_GYM_MONTH}</div>
-      </div>
-      <div class="couple-pts" style="background:${couple.bg};color:${couple.fg}">${pts} pts</div>`;
+    hdr.innerHTML=`<div><div class="couple-title" style="color:${couple.fg}">${couple.name}</div><div class="couple-sub">Academia mês ${m}: ${coupleGym}/${COUPLE_GYM_MONTH}</div></div><div class="couple-pts" style="background:${couple.bg};color:${couple.fg}">${pts} pts</div>`;
     block.appendChild(hdr);
 
-    // Per-person weekly
     [couple.p1,couple.p2].forEach(p=>{
-      const d=loadW(p.id,currentWeek)||emptyW();
+      const d=getW(p.id,currentWeek);
       if(!d.eng||d.eng.length<7) d.eng=Array(7).fill(false);
-      const gymDone=d.gym.filter(Boolean).length;
-      const engDone=d.eng.filter(Boolean).length;
+      const gymDone=d.gym.filter(Boolean).length, engDone=d.eng.filter(Boolean).length;
       const DAYS=['S','T','Q','Q','S','S','D'];
-
       const sec=document.createElement('div'); sec.className='person-section';
       sec.innerHTML=`
         <div class="person-label">
           <div class="avatar" style="background:${p.bg};color:${p.fg}">${p.initials}</div>
-          <span class="pname">${p.name}</span>
-          <span class="pcourse">${p.course}</span>
+          <span class="pname">${p.name}</span><span class="pcourse">${p.course}</span>
         </div>
         <div class="cat-row">
-          <div class="cat-left">
-            <span class="cat-label">Academia (${gymDone}/${GYM_GOAL}x)</span>
-            <span class="pts-tag">casal: 1pt com 24+/mês</span>
-          </div>
-          <div class="check-group">
-            ${[0,1,2].map(i=>`<button class="check-btn ${d.gym[i]?'done':''}" onclick="toggleGym('${p.id}',${i})">${d.gym[i]?'✓':'·'}</button>`).join('')}
-          </div>
+          <div class="cat-left"><span class="cat-label">Academia (${gymDone}/${GYM_GOAL}x)</span><span class="pts-tag">casal: 1pt com 24+/mês</span></div>
+          <div class="check-group">${[0,1,2].map(i=>`<button class="check-btn ${d.gym[i]?'done':''}" onclick="toggleGym('${p.id}',${i})">${d.gym[i]?'✓':'·'}</button>`).join('')}</div>
         </div>
         <div class="cat-row">
-          <div class="cat-left">
-            <span class="cat-label">Inglês (${engDone}/${ENG_GOAL})</span>
-            <span class="pts-tag">casal: 1pt/sem ambos 7x</span>
-          </div>
-          <div class="check-group">
-            ${DAYS.map((day,i)=>`<button class="check-btn ${d.eng[i]?'done':''}" onclick="toggleEng('${p.id}',${i})">${d.eng[i]?'✓':day}</button>`).join('')}
-          </div>
+          <div class="cat-left"><span class="cat-label">Inglês (${engDone}/${ENG_GOAL})</span><span class="pts-tag">casal: 1pt/sem ambos 7x</span></div>
+          <div class="check-group">${DAYS.map((day,i)=>`<button class="check-btn ${d.eng[i]?'done':''}" onclick="toggleEng('${p.id}',${i})">${d.eng[i]?'✓':day}</button>`).join('')}</div>
         </div>`;
       block.appendChild(sec);
     });
 
-    // Gym progress bar
     const barSec=document.createElement('div'); barSec.className='gym-bar-wrap';
-    barSec.innerHTML=`
-      <div class="bar-header"><span>Academia do casal — mês ${m}</span><span>${coupleGym}/${COUPLE_GYM_MONTH}</span></div>
-      <div class="bar-track"><div class="bar-fill${gymPct>=100?'':gymPct>=60?' warn':' bad'}" style="width:${gymPct}%"></div></div>`;
+    barSec.innerHTML=`<div class="bar-header"><span>Academia do casal — mês ${m}</span><span>${coupleGym}/${COUPLE_GYM_MONTH}</span></div><div class="bar-track"><div class="bar-fill${gymPct>=100?'':gymPct>=60?' warn':' bad'}" style="width:${gymPct}%"></div></div>`;
     block.appendChild(barSec);
 
-    // === MONTHLY SECTION (last week of month) ===
     if(isLast) {
       const mSec=document.createElement('div'); mSec.className='month-section';
       const mTitle=document.createElement('div'); mTitle.className='month-section-title';
       mTitle.innerHTML=`📅 Fechamento do mês ${m} <span>Preencha os dados finais</span>`;
       mSec.appendChild(mTitle);
 
-      // -- BIOIMPEDÂNCIA per person --
       [couple.p1,couple.p2].forEach(p=>{
-        const bd=loadB(p.id,m)||emptyB();
-        const metaV=parseFloat(bd.meta), realV=parseFloat(bd.real);
-        const hit=!isNaN(metaV)&&!isNaN(realV)&&bd.meta!==''&&bd.real!==''&&realV>=metaV;
+        const bd=getB(p.id,m);
+        const metaV=parseFloat(bd.meta),realV=parseFloat(bd.real);
         const hasData=bd.meta!==''&&bd.real!=='';
+        const hit=hasData&&!isNaN(metaV)&&!isNaN(realV)&&realV>=metaV;
         const resultCls=hasData?(hit?'hit':'miss'):'empty';
         const resultTxt=hasData?(hit?'✓ Atingiu':'✗ Não atingiu'):'—';
-
-        const bioSec=document.createElement('div'); bioSec.className='person-section';
-        bioSec.style.paddingBottom='4px';
+        const bioSec=document.createElement('div'); bioSec.className='person-section'; bioSec.style.paddingBottom='4px';
         bioSec.innerHTML=`
-          <div class="person-label">
-            <div class="avatar" style="background:${p.bg};color:${p.fg}">${p.initials}</div>
-            <span class="pname">${p.name}</span>
-          </div>
+          <div class="person-label"><div class="avatar" style="background:${p.bg};color:${p.fg}">${p.initials}</div><span class="pname">${p.name}</span></div>
           <div class="bioimp-row">
-            <div class="cat-left">
-              <span class="cat-label">⚖️ Bioimpedância</span>
-              <span class="pts-tag">1pt se real ≥ meta</span>
-            </div>
+            <div class="cat-left"><span class="cat-label">⚖️ Bioimpedância</span><span class="pts-tag">1pt se real ≥ meta</span></div>
             <div class="bioimp-inputs">
               <input type="number" step="0.1" placeholder="Meta" value="${bd.meta}" id="bio-meta-${p.id}-${m}" oninput="saveBio('${p.id}',${m})">
               <span class="bioimp-sep">→</span>
@@ -374,143 +337,102 @@ function renderRegistro() {
         mSec.appendChild(bioSec);
       });
 
-      // -- FACULDADE & CURSO per person --
       [couple.p1,couple.p2].forEach(p=>{
-        const sd=loadS(p.id,sem)||emptyS();
-        const facSt=semStatus[sd.faculty||0];
-        const curSt=semStatus[sd.course||0];
-
+        const sd=getS(p.id,sem);
+        const facSt=semStatus[sd.faculty||0], curSt=semStatus[sd.course||0];
         const semSec=document.createElement('div'); semSec.className='person-section';
         semSec.innerHTML=`
-          <div class="person-label">
-            <div class="avatar" style="background:${p.bg};color:${p.fg}">${p.initials}</div>
-            <span class="pname">${p.name}</span>
+          <div class="person-label"><div class="avatar" style="background:${p.bg};color:${p.fg}">${p.initials}</div><span class="pname">${p.name}</span></div>
+          <div class="cat-row">
+            <div class="cat-left"><span class="cat-label">🎓 Faculdade</span><span class="pts-tag">1pt ao concluir</span></div>
+            <div class="status-cycle"><button class="status-pill ${facSt.cls}" onclick="cycleStatus('${p.id}',${sem},'faculty')">${facSt.label}</button></div>
           </div>
           <div class="cat-row">
-            <div class="cat-left">
-              <span class="cat-label">🎓 Faculdade</span>
-              <span class="pts-tag">1pt ao concluir</span>
-            </div>
-            <div class="status-cycle">
-              <button class="status-pill ${facSt.cls}" onclick="cycleStatus('${p.id}',${sem},'faculty')">${facSt.label}</button>
-            </div>
-          </div>
-          <div class="cat-row">
-            <div class="cat-left">
-              <span class="cat-label">📚 Curso externo</span>
-              <span class="pts-tag">1pt ao concluir</span>
-            </div>
-            <div class="status-cycle">
-              <button class="status-pill ${curSt.cls}" onclick="cycleStatus('${p.id}',${sem},'course')">${curSt.label}</button>
-            </div>
+            <div class="cat-left"><span class="cat-label">📚 Curso externo</span><span class="pts-tag">1pt ao concluir</span></div>
+            <div class="status-cycle"><button class="status-pill ${curSt.cls}" onclick="cycleStatus('${p.id}',${sem},'course')">${curSt.label}</button></div>
           </div>`;
         mSec.appendChild(semSec);
       });
 
       block.appendChild(mSec);
     }
-
     cont.appendChild(block);
   });
 }
 
 function toggleGym(pid,idx) {
-  const d=loadW(pid,currentWeek)||emptyW(); d.gym[idx]=!d.gym[idx]; saveW(pid,currentWeek,d);
+  const d=getW(pid,currentWeek); d.gym[idx]=!d.gym[idx]; setW(pid,currentWeek,d);
   renderRegistro();
 }
 function toggleEng(pid,idx) {
-  const d=loadW(pid,currentWeek)||emptyW();
+  const d=getW(pid,currentWeek);
   if(!d.eng||d.eng.length<7) d.eng=Array(7).fill(false);
-  d.eng[idx]=!d.eng[idx]; saveW(pid,currentWeek,d);
+  d.eng[idx]=!d.eng[idx]; setW(pid,currentWeek,d);
   renderRegistro();
 }
 function saveBio(pid,m) {
   const meta=document.getElementById(`bio-meta-${pid}-${m}`)?.value||'';
   const real=document.getElementById(`bio-real-${pid}-${m}`)?.value||'';
-  saveB(pid,m,{meta,real});
+  setB(pid,m,{meta,real});
   renderRegistro();
 }
 function cycleStatus(pid,sem,field) {
-  const sd=loadS(pid,sem)||emptyS();
-  sd[field]=((sd[field]||0)+1)%3;
-  saveS(pid,sem,sd);
+  const sd=getS(pid,sem); sd[field]=((sd[field]||0)+1)%3; setS(pid,sem,sd);
   renderRegistro();
 }
 
-// Score calculation
 function calcScore(couple,month) {
-  const mw=monthWeeks(month);
-  const sem=semOf(month*4); // last week of that month determines semester
-  let pts=0;
-
-  // Gym
-  let gymT=0;
-  mw.forEach(w=>[couple.p1,couple.p2].forEach(p=>{
-    const d=loadW(p.id,w)||emptyW(); gymT+=d.gym.filter(Boolean).length;
-  }));
+  const mw=monthWeeks(month), sem=semOf(month*4);
+  let pts=0, gymT=0;
+  mw.forEach(w=>[couple.p1,couple.p2].forEach(p=>{ gymT+=getW(p.id,w).gym.filter(Boolean).length; }));
   if(gymT>=COUPLE_GYM_MONTH) pts+=1;
-
-  // English (per week, both)
   mw.forEach(w=>{
-    const d1=loadW(couple.p1.id,w)||emptyW(), d2=loadW(couple.p2.id,w)||emptyW();
-    if((d1.eng||[]).filter(Boolean).length>=ENG_GOAL && (d2.eng||[]).filter(Boolean).length>=ENG_GOAL) pts+=1;
+    const d1=getW(couple.p1.id,w), d2=getW(couple.p2.id,w);
+    if((d1.eng||[]).filter(Boolean).length>=ENG_GOAL&&(d2.eng||[]).filter(Boolean).length>=ENG_GOAL) pts+=1;
   });
-
-  // Bioimpedância
   [couple.p1,couple.p2].forEach(p=>{
-    const bd=loadB(p.id,month)||emptyB();
-    const m=parseFloat(bd.meta), r=parseFloat(bd.real);
-    if(bd.meta!==''&&bd.real!==''&&!isNaN(m)&&!isNaN(r)&&r>=m) pts+=1;
+    const bd=getB(p.id,month), mv=parseFloat(bd.meta), rv=parseFloat(bd.real);
+    if(bd.meta!==''&&bd.real!==''&&!isNaN(mv)&&!isNaN(rv)&&rv>=mv) pts+=1;
   });
-
-  // Semestral (faculty + course) — only if concluded
   [couple.p1,couple.p2].forEach(p=>{
-    const sd=loadS(p.id,sem)||emptyS();
+    const sd=getS(p.id,sem);
     if((sd.faculty||0)===2) pts+=1;
     if((sd.course||0)===2) pts+=1;
   });
-
   return pts;
 }
 
 function renderPlacar() {
-  const m=monthOf(currentWeek);
+  const m=monthOf(currentWeek), mw=monthWeeks(m), sem=semOf(m*4);
   const c=document.getElementById('placar-container'); c.innerHTML='';
-  const scores=couples.map(couple=>({couple,pts:calcScore(couple,m)})).sort((a,b)=>b.pts-a.pts);
-  const mw=monthWeeks(m);
-  const sem=semOf(m*4); // last week of current month determines semester
+  const scores=couples.map(cp=>({couple:cp,pts:calcScore(cp,m)})).sort((a,b)=>b.pts-a.pts);
 
   scores.forEach((s,rank)=>{
     const cp=s.couple;
     let gymT=0;
-    mw.forEach(w=>[cp.p1,cp.p2].forEach(p=>{const d=loadW(p.id,w)||emptyW();gymT+=d.gym.filter(Boolean).length;}));
+    mw.forEach(w=>[cp.p1,cp.p2].forEach(p=>{ gymT+=getW(p.id,w).gym.filter(Boolean).length; }));
     let engW=0;
     mw.forEach(w=>{
-      const d1=loadW(cp.p1.id,w)||emptyW(),d2=loadW(cp.p2.id,w)||emptyW();
+      const d1=getW(cp.p1.id,w),d2=getW(cp.p2.id,w);
       if((d1.eng||[]).filter(Boolean).length>=ENG_GOAL&&(d2.eng||[]).filter(Boolean).length>=ENG_GOAL) engW++;
     });
     let bioT=0;
     [cp.p1,cp.p2].forEach(p=>{
-      const bd=loadB(p.id,m)||emptyB();
-      const mv=parseFloat(bd.meta),rv=parseFloat(bd.real);
+      const bd=getB(p.id,m), mv=parseFloat(bd.meta), rv=parseFloat(bd.real);
       if(bd.meta!==''&&bd.real!==''&&!isNaN(mv)&&!isNaN(rv)&&rv>=mv) bioT++;
     });
     let facT=0,curT=0;
     [cp.p1,cp.p2].forEach(p=>{
-      const sd=loadS(p.id,sem)||emptyS();
+      const sd=getS(p.id,sem);
       if((sd.faculty||0)===2) facT++;
       if((sd.course||0)===2) curT++;
     });
-
     const div=document.createElement('div'); div.className='score-card';
     div.innerHTML=`
       <div class="score-top">
         <div style="display:flex;align-items:center;gap:12px;">
           <div class="score-rank" style="background:${cp.bg};color:${cp.fg}">${rank+1}</div>
-          <div>
-            <div style="font-size:15px;font-weight:600">${cp.name}</div>
-            <div style="font-size:12px;color:var(--text-muted)">Mês ${m}</div>
-          </div>
+          <div><div style="font-size:15px;font-weight:600">${cp.name}</div><div style="font-size:12px;color:var(--text-muted)">Mês ${m}</div></div>
         </div>
         <div class="score-big">${s.pts} <span style="font-size:14px;font-weight:400;color:var(--text-muted)">pts</span></div>
       </div>
@@ -522,7 +444,7 @@ function renderPlacar() {
     c.appendChild(div);
   });
 
-  if(scores[0].pts===scores[1].pts) {
+  if(scores[0].pts===scores[1].pts){
     const t=document.createElement('div'); t.className='tie-note';
     t.textContent='Empate este mês — cada casal custeia o próprio programa.';
     c.appendChild(t);
@@ -546,7 +468,7 @@ function renderTrilha() {
           if(w>currentWeek) dot.classList.add('future');
           else if(w===currentWeek) dot.classList.add('current');
           else {
-            const d=loadW(p.id,w)||emptyW();
+            const d=getW(p.id,w);
             if(type==='gym'){const g=d.gym.filter(Boolean).length;dot.classList.add(g>=3?'full':g>0?'partial':'empty');}
             else{const e=(d.eng||[]).filter(Boolean).length;dot.classList.add(e>=7?'full':e>0?'partial':'empty');}
           }
@@ -561,7 +483,12 @@ function renderTrilha() {
   c.appendChild(legend);
 }
 
-renderWeek();
+// ── Boot ────────────────────────────────────────────────────────
+(async ()=>{
+  await loadDB();
+  document.getElementById('loading').style.display='none';
+  renderWeek();
+})();
 </script>
 </body>
 </html>
