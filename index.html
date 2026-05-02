@@ -13,112 +13,115 @@
     --coral-bg:#FAECE7;--coral-fg:#4A1B0C;--coral-mid:#F0997B;
     --text:#1a1a1a;--text-muted:#666;--text-faint:#999;
     --border:rgba(0,0,0,0.10);--border-strong:rgba(0,0,0,0.18);
-    --bg:#f8f7f4;--surface:#ffffff;--surface2:#f2f1ee;
+    --bg:#f8f7f4;--surface:#fff;--surface2:#f2f1ee;
     --radius:10px;--radius-lg:14px;
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
-  .site-header{background:var(--surface);border-bottom:1px solid var(--border);padding:1.25rem 1.5rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10;}
-  .site-header h1{font-size:17px;font-weight:600;letter-spacing:-0.02em;}
-  .week-pill{background:var(--purple-bg);color:var(--purple-fg);font-size:12px;font-weight:500;padding:4px 12px;border-radius:20px;}
-  .tabs-bar{background:var(--surface);border-bottom:1px solid var(--border);padding:0 1.5rem;display:flex;overflow-x:auto;}
-  .tab{padding:12px 16px;font-size:13px;font-weight:500;cursor:pointer;color:var(--text-muted);border-bottom:2px solid transparent;white-space:nowrap;background:none;border-top:none;border-left:none;border-right:none;font-family:inherit;}
+  .site-header{background:var(--surface);border-bottom:1px solid var(--border);padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10;}
+  .site-header h1{font-size:16px;font-weight:600;}
+  .header-right{display:flex;align-items:center;gap:8px;}
+  .week-pill{background:var(--purple-bg);color:var(--purple-fg);font-size:12px;font-weight:500;padding:3px 10px;border-radius:20px;}
+  .sync-btn{font-size:11px;color:var(--purple-fg);background:var(--purple-bg);border:none;border-radius:10px;padding:3px 10px;cursor:pointer;font-family:inherit;font-weight:500;}
+  .sync-btn:disabled{opacity:.5;cursor:default;}
+  .save-dot{width:7px;height:7px;border-radius:50%;background:#ccc;flex-shrink:0;transition:background .3s;}
+  .save-dot.saving{background:var(--amber-mid);}
+  .save-dot.saved{background:var(--teal-mid);}
+  .save-dot.error{background:var(--coral-mid);}
+  .tabs-bar{background:var(--surface);border-bottom:1px solid var(--border);padding:0 1.25rem;display:flex;overflow-x:auto;}
+  .tab{padding:11px 14px;font-size:13px;font-weight:500;cursor:pointer;color:var(--text-muted);border-bottom:2px solid transparent;white-space:nowrap;background:none;border-top:none;border-left:none;border-right:none;font-family:inherit;}
   .tab.active{color:var(--purple-fg);border-bottom-color:var(--purple-mid);}
-  .main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 4rem;}
-  .week-nav{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:1.5rem;}
-  .week-nav button{width:36px;height:36px;border-radius:50%;border:1px solid var(--border-strong);background:var(--surface);cursor:pointer;font-size:16px;color:var(--text);display:flex;align-items:center;justify-content:center;font-family:inherit;}
+  .main{max-width:760px;margin:0 auto;padding:1.25rem 1rem 4rem;}
+  .week-nav{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:1.25rem;}
+  .week-nav button{width:34px;height:34px;border-radius:50%;border:1px solid var(--border-strong);background:var(--surface);cursor:pointer;font-size:15px;color:var(--text);display:flex;align-items:center;justify-content:center;font-family:inherit;}
   .week-nav button:disabled{opacity:.3;cursor:default;}
-  .week-nav .week-info{text-align:center;}
-  .week-nav .week-info strong{display:block;font-size:15px;font-weight:600;}
-  .week-nav .week-info span{font-size:12px;color:var(--text-muted);}
-  .couple-block{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);margin-bottom:1.25rem;overflow:hidden;}
-  .couple-header{display:flex;align-items:center;justify-content:space-between;padding:12px 1.25rem;}
+  .week-info{text-align:center;}
+  .week-info strong{display:block;font-size:15px;font-weight:600;}
+  .week-info span{font-size:12px;color:var(--text-muted);}
+  .couple-block{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);margin-bottom:1.1rem;overflow:hidden;}
+  .couple-header{display:flex;align-items:center;justify-content:space-between;padding:11px 1.1rem;}
   .couple-title{font-size:15px;font-weight:600;}
-  .couple-sub{font-size:12px;color:var(--text-muted);margin-top:2px;}
-  .couple-pts{font-size:13px;font-weight:600;padding:5px 12px;border-radius:20px;}
-  .person-section{border-top:1px solid var(--border);padding:10px 1.25rem 12px;}
-  .person-label{display:flex;align-items:center;gap:8px;margin-bottom:8px;}
-  .avatar{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;flex-shrink:0;}
+  .couple-sub{font-size:12px;color:var(--text-muted);margin-top:1px;}
+  .couple-pts{font-size:13px;font-weight:600;padding:4px 11px;border-radius:20px;}
+  .person-section{border-top:1px solid var(--border);padding:9px 1.1rem 10px;}
+  .person-label{display:flex;align-items:center;gap:7px;margin-bottom:7px;}
+  .avatar{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;flex-shrink:0;}
   .pname{font-size:13px;font-weight:500;}
-  .pcourse{font-size:12px;color:var(--text-muted);}
-  .cat-row{display:flex;align-items:center;justify-content:space-between;padding:6px 0;border-top:1px solid var(--border);gap:8px;flex-wrap:wrap;}
-  .cat-left{display:flex;align-items:center;gap:7px;flex-wrap:wrap;}
+  .pcourse{font-size:11px;color:var(--text-muted);}
+  .cat-row{display:flex;align-items:center;justify-content:space-between;padding:5px 0;border-top:1px solid var(--border);gap:8px;flex-wrap:wrap;}
+  .cat-left{display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
   .cat-label{font-size:13px;color:var(--text-muted);}
-  .pts-tag{font-size:10px;padding:2px 7px;border-radius:10px;background:var(--purple-bg);color:var(--purple-fg);white-space:nowrap;font-weight:500;}
+  .pts-tag{font-size:10px;padding:2px 6px;border-radius:10px;background:var(--purple-bg);color:var(--purple-fg);white-space:nowrap;font-weight:500;}
   .check-group{display:flex;gap:3px;flex-wrap:wrap;justify-content:flex-end;}
-  .check-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border-strong);background:var(--surface);cursor:pointer;font-size:11px;font-weight:500;display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;transition:background .12s;}
+  .check-btn{width:25px;height:25px;border-radius:6px;border:1px solid var(--border-strong);background:var(--surface);cursor:pointer;font-size:11px;font-weight:500;display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;transition:background .1s;}
   .check-btn.done{background:var(--teal-light);border-color:var(--teal-mid);color:var(--teal-fg);}
-  .gym-bar-wrap{padding:8px 1.25rem 12px;border-top:1px solid var(--border);}
-  .bar-header{display:flex;justify-content:space-between;font-size:12px;color:var(--text-muted);margin-bottom:5px;}
-  .bar-track{height:6px;border-radius:6px;background:var(--surface2);overflow:hidden;}
-  .bar-fill{height:100%;border-radius:6px;background:var(--teal-mid);transition:width .3s;}
+  .gym-bar-wrap{padding:7px 1.1rem 10px;border-top:1px solid var(--border);}
+  .bar-header{display:flex;justify-content:space-between;font-size:12px;color:var(--text-muted);margin-bottom:4px;}
+  .bar-track{height:5px;border-radius:5px;background:var(--surface2);overflow:hidden;}
+  .bar-fill{height:100%;border-radius:5px;background:var(--teal-mid);transition:width .3s;}
   .bar-fill.warn{background:var(--amber-mid);}
   .bar-fill.bad{background:var(--coral-mid);}
-  .month-section{border-top:2px solid var(--purple-mid);margin-top:2px;}
-  .month-section-title{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--purple-fg);background:var(--purple-bg);padding:5px 1.25rem;display:flex;align-items:center;gap:6px;}
+  .month-section{border-top:2px solid var(--purple-mid);}
+  .month-section-title{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--purple-fg);background:var(--purple-bg);padding:5px 1.1rem;display:flex;align-items:center;gap:6px;}
   .month-section-title span{font-size:10px;font-weight:400;color:var(--purple-mid);}
-  .bioimp-row{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:6px 0;border-top:1px solid var(--border);flex-wrap:wrap;}
-  .bioimp-inputs{display:flex;align-items:center;gap:6px;}
-  .bioimp-inputs input{width:64px;padding:4px 6px;border:1px solid var(--border-strong);border-radius:6px;font-size:13px;font-family:'DM Mono',monospace;background:var(--surface2);color:var(--text);text-align:center;}
+  .bioimp-row{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:5px 0;border-top:1px solid var(--border);flex-wrap:wrap;}
+  .bioimp-inputs{display:flex;align-items:center;gap:5px;}
+  .bioimp-inputs input{width:60px;padding:4px 5px;border:1px solid var(--border-strong);border-radius:6px;font-size:12px;font-family:'DM Mono',monospace;background:var(--surface2);color:var(--text);text-align:center;}
   .bioimp-inputs input:focus{outline:2px solid var(--purple-mid);background:var(--surface);}
-  .bioimp-result{font-size:12px;padding:3px 9px;border-radius:10px;font-weight:500;white-space:nowrap;}
+  .bioimp-sep{font-size:12px;color:var(--text-muted);}
+  .bioimp-result{font-size:11px;padding:2px 8px;border-radius:10px;font-weight:500;white-space:nowrap;}
   .bioimp-result.hit{background:var(--teal-light);color:var(--teal-fg);}
   .bioimp-result.miss{background:var(--coral-bg);color:var(--coral-fg);}
   .bioimp-result.empty{background:var(--surface2);color:var(--text-faint);}
-  .status-cycle{display:flex;align-items:center;gap:6px;}
   .status-pill{font-size:11px;padding:3px 9px;border-radius:10px;font-weight:500;cursor:pointer;border:none;font-family:inherit;}
   .status-null{background:var(--surface2);color:var(--text-muted);}
   .status-pend{background:var(--amber-bg);color:var(--amber-fg);}
   .status-done{background:var(--teal-light);color:var(--teal-fg);}
-  .score-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.25rem;margin-bottom:10px;}
-  .score-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
-  .score-rank{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:600;flex-shrink:0;}
-  .score-big{font-size:30px;font-weight:600;letter-spacing:-.03em;}
+  .score-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.1rem;margin-bottom:10px;}
+  .score-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+  .score-rank{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;flex-shrink:0;}
+  .score-big{font-size:28px;font-weight:600;letter-spacing:-.03em;}
   .score-detail{display:flex;justify-content:space-between;font-size:12px;padding:5px 0;border-top:1px solid var(--border);color:var(--text-muted);}
   .score-detail strong{color:var(--text);font-weight:500;}
-  .prize-box{background:var(--teal-bg);border:1px solid var(--teal-light);border-radius:var(--radius);padding:1rem 1.25rem;margin-top:1rem;}
-  .prize-box .t{font-size:13px;font-weight:600;color:var(--teal-fg);margin-bottom:3px;}
+  .prize-box{background:var(--teal-bg);border:1px solid var(--teal-light);border-radius:var(--radius);padding:.9rem 1.1rem;margin-top:1rem;}
+  .prize-box .t{font-size:13px;font-weight:600;color:var(--teal-fg);margin-bottom:2px;}
   .prize-box .d{font-size:13px;color:#0F6E56;}
-  .tie-note{text-align:center;font-size:13px;color:var(--text-muted);background:var(--surface2);border-radius:var(--radius);padding:10px;margin-top:8px;}
-  .trail-section-title{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted);margin:1.5rem 0 8px;}
-  .trail-person{margin-bottom:12px;}
-  .trail-person-label{font-size:12px;color:var(--text-muted);margin-bottom:5px;}
+  .tie-note{text-align:center;font-size:13px;color:var(--text-muted);background:var(--surface2);border-radius:var(--radius);padding:9px;margin-top:8px;}
+  .trail-section-title{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted);margin:1.4rem 0 7px;}
+  .trail-person{margin-bottom:10px;}
+  .trail-person-label{font-size:12px;color:var(--text-muted);margin-bottom:4px;}
   .trail-row{display:flex;flex-wrap:wrap;gap:3px;}
-  .tdot{width:20px;height:20px;border-radius:4px;font-size:8px;font-weight:500;display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;}
+  .tdot{width:19px;height:19px;border-radius:4px;font-size:8px;font-weight:500;display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;}
   .tdot.future{background:var(--surface2);color:var(--text-faint);}
   .tdot.current{background:#CECBF6;color:var(--purple-fg);outline:2px solid var(--purple-mid);}
   .tdot.full{background:var(--teal-light);color:var(--teal-fg);}
   .tdot.partial{background:var(--amber-mid);color:var(--amber-fg);}
   .tdot.empty{background:var(--coral-mid);color:var(--coral-fg);}
-  .legend{display:flex;gap:14px;margin-top:12px;font-size:12px;color:var(--text-muted);flex-wrap:wrap;}
-  .legend span{display:flex;align-items:center;gap:5px;}
-  .legend i{display:inline-block;width:10px;height:10px;border-radius:2px;}
-  .rule-block{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.25rem;margin-bottom:10px;}
-  .rule-block-title{font-size:14px;font-weight:600;margin-bottom:10px;}
-  .rule-item{display:flex;gap:10px;font-size:13px;color:var(--text-muted);padding:5px 0;border-top:1px solid var(--border);line-height:1.5;}
+  .legend{display:flex;gap:12px;margin-top:10px;font-size:12px;color:var(--text-muted);flex-wrap:wrap;}
+  .legend span{display:flex;align-items:center;gap:4px;}
+  .legend i{display:inline-block;width:9px;height:9px;border-radius:2px;}
+  .rule-block{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.1rem;margin-bottom:10px;}
+  .rule-block-title{font-size:14px;font-weight:600;margin-bottom:9px;}
+  .rule-item{display:flex;gap:9px;font-size:13px;color:var(--text-muted);padding:5px 0;border-top:1px solid var(--border);line-height:1.5;}
   .rule-item:first-of-type{border-top:none;}
   .rule-icon{flex-shrink:0;font-size:13px;margin-top:1px;}
-  .rule-pts{font-size:11px;background:var(--purple-bg);color:var(--purple-fg);padding:2px 7px;border-radius:10px;font-weight:500;white-space:nowrap;display:inline-block;margin-left:4px;}
-  .consequence-box{background:#FEF3CD;border:1px solid #FAC775;border-radius:var(--radius);padding:10px 1.25rem;margin-top:10px;font-size:13px;color:#6B4400;}
-  .loading-overlay{position:fixed;inset:0;background:rgba(248,247,244,.85);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;z-index:100;font-size:14px;color:var(--text-muted);}
-  .spinner{width:28px;height:28px;border:3px solid var(--border);border-top-color:var(--purple-mid);border-radius:50%;animation:spin .7s linear infinite;}
+  .rule-pts{font-size:11px;background:var(--purple-bg);color:var(--purple-fg);padding:2px 6px;border-radius:10px;font-weight:500;white-space:nowrap;display:inline-block;margin-left:3px;}
+  #loading{position:fixed;inset:0;background:rgba(248,247,244,.92);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;z-index:200;font-size:14px;color:var(--text-muted);}
+  .spinner{width:26px;height:26px;border:3px solid var(--border);border-top-color:var(--purple-mid);border-radius:50%;animation:spin .7s linear infinite;}
   @keyframes spin{to{transform:rotate(360deg);}}
-  .sync-btn{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--purple-fg);background:var(--purple-bg);border:none;border-radius:10px;padding:3px 10px;cursor:pointer;font-family:inherit;}
-  .sync-btn:disabled{opacity:.5;cursor:default;}
+  #error-banner{display:none;background:#FEF3CD;border:1px solid #FAC775;border-radius:var(--radius);padding:10px 1rem;margin-bottom:1rem;font-size:13px;color:#6B4400;}
 </style>
 </head>
 <body>
 
-<div class="loading-overlay" id="loading">
-  <div class="spinner"></div>
-  <span>Carregando dados compartilhados…</span>
-</div>
+<div id="loading"><div class="spinner"></div><span id="loading-msg">Carregando dados…</span></div>
 
 <header class="site-header">
   <h1>Guinada a Quatro 🏁</h1>
-  <div style="display:flex;align-items:center;gap:8px;">
-    <button class="sync-btn" id="sync-btn" onclick="syncAll()">↻ Sync</button>
-    <span class="week-pill" id="week-pill">Semana 1 de 52</span>
+  <div class="header-right">
+    <div class="save-dot" id="save-dot" title="Status do salvamento"></div>
+    <button class="sync-btn" id="sync-btn" onclick="syncNow()">↻ Sync</button>
+    <span class="week-pill" id="week-pill">Sem. 1/52</span>
   </div>
 </header>
 
@@ -130,17 +133,17 @@
 </div>
 
 <div class="main">
+  <div id="error-banner">⚠️ Erro ao salvar. Verifique sua conexão e tente o Sync.</div>
+
   <div id="tab-registro">
     <div class="week-nav">
       <button id="btn-prev" onclick="changeWeek(-1)">&#8592;</button>
-      <div class="week-info">
-        <strong id="week-main-label">Semana 1</strong>
-        <span id="week-sub-label"></span>
-      </div>
+      <div class="week-info"><strong id="week-main-label"></strong><span id="week-sub-label"></span></div>
       <button id="btn-next" onclick="changeWeek(1)">&#8594;</button>
     </div>
     <div id="registro-container"></div>
   </div>
+
   <div id="tab-placar" style="display:none">
     <div id="placar-container"></div>
     <div class="prize-box">
@@ -148,35 +151,39 @@
       <div class="d">O casal com mais pontos no mês custeia a saída do outro casal. Em empate, cada casal custeia o próprio programa.</div>
     </div>
   </div>
+
   <div id="tab-trilha" style="display:none"><div id="trilha-container"></div></div>
+
   <div id="tab-regras" style="display:none">
     <div class="rule-block">
       <div class="rule-block-title">Academia</div>
-      <div class="rule-item"><span class="rule-icon">🎯</span><span>Meta individual: 3x por semana. O casal precisa de <strong>24 idas/mês</strong> para pontuar. <span class="rule-pts">1 pt/mês</span></span></div>
-      <div class="rule-item"><span class="rule-icon">💸</span><span>Quem não atingir 3x em alguma semana paga <strong>R$ 10</strong> para cada integrante que cumpriu todas as metas naquela semana.</span></div>
+      <div class="rule-item"><span class="rule-icon">🎯</span><span>Meta individual: 3x/semana. Casal precisa de <strong>24 idas/mês</strong>. <span class="rule-pts">1 pt/mês</span></span></div>
+      <div class="rule-item"><span class="rule-icon">💸</span><span>Quem não atingir 3x paga <strong>R$ 10</strong> a cada um que cumpriu tudo naquela semana.</span></div>
     </div>
     <div class="rule-block">
       <div class="rule-block-title">Inglês</div>
-      <div class="rule-item"><span class="rule-icon">🎯</span><span>Meta: praticar todos os dias (7x/semana). Casal pontua quando <strong>ambos</strong> completam os 7 dias. <span class="rule-pts">1 pt/semana</span></span></div>
+      <div class="rule-item"><span class="rule-icon">🎯</span><span>7x/semana. Pontua quando <strong>ambos</strong> do casal completam. <span class="rule-pts">1 pt/semana</span></span></div>
     </div>
     <div class="rule-block">
       <div class="rule-block-title">Bioimpedância (última semana do mês)</div>
-      <div class="rule-item"><span class="rule-icon">⚖️</span><span>Registro manual de Meta e Real. Se Real ≥ Meta, pontua. <span class="rule-pts">1 pt/pessoa</span></span></div>
+      <div class="rule-item"><span class="rule-icon">⚖️</span><span>Registro manual de Meta e Real. Se Real ≥ Meta pontua. <span class="rule-pts">1 pt/pessoa</span></span></div>
     </div>
     <div class="rule-block">
       <div class="rule-block-title">Faculdade & Curso (última semana do mês)</div>
-      <div class="rule-item"><span class="rule-icon">🎓</span><span>Atualização mensal de status: Não iniciado → Em andamento → Concluído. Pontua ao marcar <strong>Concluído</strong>. <span class="rule-pts">1 pt/pessoa/semestre</span></span></div>
+      <div class="rule-item"><span class="rule-icon">🎓</span><span>Não iniciado → Em andamento → Concluído. Pontua ao marcar Concluído. <span class="rule-pts">1 pt/pessoa/semestre</span></span></div>
     </div>
     <div class="rule-block">
       <div class="rule-block-title">Premiação mensal</div>
-      <div class="rule-item"><span class="rule-icon">🏆</span><span>O casal com mais pontos no mês custeia a saída do outro casal.</span></div>
-      <div class="rule-item"><span class="rule-icon">🤝</span><span>Em caso de empate, cada casal custeia o próprio programa.</span></div>
+      <div class="rule-item"><span class="rule-icon">🏆</span><span>Casal com mais pontos custeia a saída do outro casal.</span></div>
+      <div class="rule-item"><span class="rule-icon">🤝</span><span>Empate: cada casal custeia o próprio programa.</span></div>
     </div>
   </div>
 </div>
 
 <script>
-const TOTAL_WEEKS=52, START_WEEK=19, GYM_GOAL=3, ENG_GOAL=7, COUPLE_GYM_MONTH=24;
+// ── Config ─────────────────────────────────────────────────────
+const FB = 'https://guinada-a-quatro-default-rtdb.firebaseio.com';
+const TOTAL_WEEKS=52, START_WEEK=19, GYM_GOAL=3, ENG_GOAL=7, COUPLE_GYM=24;
 
 const couples=[
   {id:'casal1',name:'Dani & Leo',bg:'#EEEDFE',fg:'#3C3489',
@@ -187,115 +194,174 @@ const couples=[
    p2:{id:'joel',name:'Joel',course:'Logística',initials:'JO',bg:'#FAECE7',fg:'#4A1B0C'}},
 ];
 
-// ── Shared storage ──────────────────────────────────────────────
-// Single key holds ALL data: { week:{pid_w: {...}}, bio:{pid_m:{...}}, sem:{pid_s:{...}} }
-const STORE_KEY = 'g4_shared_data';
-let db = { week:{}, bio:{}, sem:{} };
+const semStatus=[
+  {label:'Não iniciado',cls:'status-null'},
+  {label:'Em andamento',cls:'status-pend'},
+  {label:'Concluído',   cls:'status-done'},
+];
 
-async function loadDB() {
+// ── DB (in-memory, synced with Firebase) ──────────────────────
+let db={week:{},bio:{},sem:{}};
+let currentWeek=1, currentTab='registro', saveTimer=null;
+
+// ── Firebase REST helpers ─────────────────────────────────────
+async function fbGet(path){
+  const r=await fetch(`${FB}/${path}.json`);
+  if(!r.ok) throw new Error('fbGet '+r.status);
+  return r.json();
+}
+async function fbPatch(path, data){
+  const r=await fetch(`${FB}/${path}.json`,{
+    method:'PATCH',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(data)
+  });
+  if(!r.ok) throw new Error('fbPatch '+r.status);
+  return r.json();
+}
+
+// ── Load all from Firebase ────────────────────────────────────
+async function loadRemote(){
   try {
-    const r = await window.storage.get(STORE_KEY, true);
-    if(r && r.value) db = JSON.parse(r.value);
-  } catch(e) { /* first run */ }
+    const data=await fbGet('g4');
+    db={
+      week:(data&&data.week)||{},
+      bio: (data&&data.bio) ||{},
+      sem: (data&&data.sem) ||{},
+    };
+    dot('saved');
+  } catch(e){
+    console.warn('loadRemote failed',e);
+    dot('error');
+  }
 }
 
-let saveTimer = null;
-function scheduleSave() {
-  clearTimeout(saveTimer);
-  saveTimer = setTimeout(async ()=>{
-    const btn=document.getElementById('sync-btn');
-    btn.disabled=true; btn.textContent='↻ Salvando…';
-    try { await window.storage.set(STORE_KEY, JSON.stringify(db), true); }
-    catch(e){ console.error('save error',e); }
-    btn.disabled=false; btn.textContent='↻ Sync';
-  }, 600);
+// ── Save only changed node ────────────────────────────────────
+function dot(cls){ document.getElementById('save-dot').className='save-dot '+cls; }
+function showError(){ document.getElementById('error-banner').style.display='block'; }
+function hideError(){ document.getElementById('error-banner').style.display='none'; }
+
+async function patchNode(node, key, value){
+  dot('saving');
+  try {
+    await fbPatch(`g4/${node}`, {[key]: value});
+    dot('saved');
+    hideError();
+  } catch(e){
+    console.error('patchNode failed',e);
+    dot('error');
+    showError();
+  }
 }
 
-async function syncAll() {
+// ── Accessors (read local, write local + remote) ──────────────
+const emptyW=()=>({gym:[false,false,false],eng:Array(7).fill(false)});
+const emptyB=()=>({meta:'',real:''});
+const emptyS=()=>({course:0,faculty:0});
+
+function getW(pid,w)   { return JSON.parse(JSON.stringify(db.week[`${pid}_${w}`]||emptyW())); }
+function getB(pid,m)   { return JSON.parse(JSON.stringify(db.bio[`${pid}_${m}`] ||emptyB())); }
+function getS(pid,s)   { return JSON.parse(JSON.stringify(db.sem[`${pid}_${s}`] ||emptyS())); }
+
+function setW(pid,w,d) { const k=`${pid}_${w}`; db.week[k]=d; patchNode('week',k,d); }
+function setB(pid,m,d) { const k=`${pid}_${m}`; db.bio[k]=d;  patchNode('bio',k,d); }
+function setS(pid,s,d) { const k=`${pid}_${s}`; db.sem[k]=d;  patchNode('sem',k,d); }
+
+// ── Sync button ───────────────────────────────────────────────
+async function syncNow(){
   const btn=document.getElementById('sync-btn');
-  btn.disabled=true; btn.textContent='↻ Buscando…';
-  await loadDB();
+  btn.disabled=true; btn.textContent='…';
+  await loadRemote();
   btn.disabled=false; btn.textContent='↻ Sync';
-  renderRegistro();
-  renderByTab();
+  renderAll();
 }
 
-// Accessors
-function getW(pid,w)      { return db.week[`${pid}_${w}`] || emptyW(); }
-function setW(pid,w,d)    { db.week[`${pid}_${w}`]=d; scheduleSave(); }
-function getB(pid,m)      { return db.bio[`${pid}_${m}`]  || emptyB(); }
-function setB(pid,m,d)    { db.bio[`${pid}_${m}`]=d; scheduleSave(); }
-function getS(pid,sem)    { return db.sem[`${pid}_${sem}`] || emptyS(); }
-function setS(pid,sem,d)  { db.sem[`${pid}_${sem}`]=d; scheduleSave(); }
+// ── Helpers ───────────────────────────────────────────────────
+const monthOf  = w=>Math.ceil(w/4);
+const semOf    = w=>w<=26?1:2;
+const isLast   = w=>w%4===0||w===TOTAL_WEEKS;
+const monthWks = m=>{ const s=(m-1)*4+1,e=Math.min(s+3,TOTAL_WEEKS); return Array.from({length:e-s+1},(_,i)=>s+i); };
+const el       = (tag,cls)=>{ const e=document.createElement(tag); if(cls)e.className=cls; return e; };
 
-function emptyW() { return {gym:[false,false,false],eng:Array(7).fill(false)}; }
-function emptyB() { return {meta:'',real:''}; }
-function emptyS() { return {course:0,faculty:0}; }
-
-function monthOf(w)   { return Math.ceil(w/4); }
-function semOf(w)     { return w<=26?1:2; }
-function isLastWeekOfMonth(w) { return w%4===0||w===TOTAL_WEEKS; }
-function monthWeeks(m){ const s=(m-1)*4+1,e=Math.min(s+3,TOTAL_WEEKS); return Array.from({length:e-s+1},(_,i)=>s+i); }
-
-const semStatus=[{label:'Não iniciado',cls:'status-null'},{label:'Em andamento',cls:'status-pend'},{label:'Concluído',cls:'status-done'}];
-
-let currentWeek=1, currentTab='registro';
-
-function setTab(name) {
-  ['registro','placar','trilha','regras'].forEach(t=>document.getElementById('tab-'+t).style.display=t===name?'':'none');
-  document.querySelectorAll('.tab').forEach((el,i)=>el.classList.toggle('active',['registro','placar','trilha','regras'][i]===name));
+// ── Routing ───────────────────────────────────────────────────
+function setTab(name){
+  ['registro','placar','trilha','regras'].forEach(t=>
+    document.getElementById('tab-'+t).style.display=t===name?'':'none');
+  document.querySelectorAll('.tab').forEach((e,i)=>
+    e.classList.toggle('active',['registro','placar','trilha','regras'][i]===name));
   currentTab=name;
   renderByTab();
 }
-function renderByTab() {
+function renderByTab(){
   if(currentTab==='placar') renderPlacar();
   if(currentTab==='trilha') renderTrilha();
 }
+function renderAll(){ renderWeek(); renderByTab(); }
 
-function changeWeek(d) {
+function changeWeek(d){
   currentWeek=Math.max(1,Math.min(TOTAL_WEEKS,currentWeek+d));
   renderWeek();
 }
-
-function renderWeek() {
-  const real=START_WEEK+currentWeek-1, m=monthOf(currentWeek), isLast=isLastWeekOfMonth(currentWeek);
-  document.getElementById('week-pill').textContent=`Semana ${currentWeek} de ${TOTAL_WEEKS}`;
-  document.getElementById('week-main-label').textContent=`Semana ${currentWeek}${isLast?' — última do mês':''}`;
+function renderWeek(){
+  const real=START_WEEK+currentWeek-1, m=monthOf(currentWeek), last=isLast(currentWeek);
+  document.getElementById('week-pill').textContent=`Sem. ${currentWeek}/52`;
+  document.getElementById('week-main-label').textContent=`Semana ${currentWeek}${last?' — última do mês':''}`;
   document.getElementById('week-sub-label').textContent=`Semana ${real} do ano · Mês ${m}`;
   document.getElementById('btn-prev').disabled=currentWeek===1;
   document.getElementById('btn-next').disabled=currentWeek===TOTAL_WEEKS;
   renderRegistro();
 }
 
-function renderRegistro() {
+// ── Score ─────────────────────────────────────────────────────
+function calcScore(couple,month){
+  const mw=monthWks(month), sem=semOf(month*4);
+  let pts=0, gymT=0;
+  mw.forEach(w=>[couple.p1,couple.p2].forEach(p=>{ gymT+=getW(p.id,w).gym.filter(Boolean).length; }));
+  if(gymT>=COUPLE_GYM) pts++;
+  mw.forEach(w=>{
+    const d1=getW(couple.p1.id,w),d2=getW(couple.p2.id,w);
+    if(d1.eng.filter(Boolean).length>=ENG_GOAL&&d2.eng.filter(Boolean).length>=ENG_GOAL) pts++;
+  });
+  [couple.p1,couple.p2].forEach(p=>{
+    const b=getB(p.id,month),mv=parseFloat(b.meta),rv=parseFloat(b.real);
+    if(b.meta!==''&&b.real!==''&&!isNaN(mv)&&!isNaN(rv)&&rv>=mv) pts++;
+  });
+  [couple.p1,couple.p2].forEach(p=>{
+    const s=getS(p.id,sem);
+    if((s.faculty||0)===2) pts++;
+    if((s.course||0)===2)  pts++;
+  });
+  return pts;
+}
+
+// ── Render: Registro ──────────────────────────────────────────
+function renderRegistro(){
   const cont=document.getElementById('registro-container'); cont.innerHTML='';
-  const m=monthOf(currentWeek), mw=monthWeeks(m), sem=semOf(currentWeek), isLast=isLastWeekOfMonth(currentWeek);
+  const m=monthOf(currentWeek),mw=monthWks(m),sem=semOf(currentWeek),last=isLast(currentWeek);
 
   couples.forEach(couple=>{
-    let coupleGym=0;
-    mw.forEach(w=>[couple.p1,couple.p2].forEach(p=>{ coupleGym+=getW(p.id,w).gym.filter(Boolean).length; }));
-    const gymPct=Math.min(100,Math.round(coupleGym/COUPLE_GYM_MONTH*100));
+    let gymTotal=0;
+    mw.forEach(w=>[couple.p1,couple.p2].forEach(p=>{ gymTotal+=getW(p.id,w).gym.filter(Boolean).length; }));
+    const gymPct=Math.min(100,Math.round(gymTotal/COUPLE_GYM*100));
     const pts=calcScore(couple,m);
-    const block=document.createElement('div'); block.className='couple-block';
+    const block=el('div','couple-block');
 
-    const hdr=document.createElement('div'); hdr.className='couple-header';
-    hdr.style.cssText=`background:${couple.bg}30`;
-    hdr.innerHTML=`<div><div class="couple-title" style="color:${couple.fg}">${couple.name}</div><div class="couple-sub">Academia mês ${m}: ${coupleGym}/${COUPLE_GYM_MONTH}</div></div><div class="couple-pts" style="background:${couple.bg};color:${couple.fg}">${pts} pts</div>`;
+    const hdr=el('div','couple-header'); hdr.style.background=couple.bg+'28';
+    hdr.innerHTML=`<div><div class="couple-title" style="color:${couple.fg}">${couple.name}</div><div class="couple-sub">Academia mês ${m}: ${gymTotal}/${COUPLE_GYM}</div></div><div class="couple-pts" style="background:${couple.bg};color:${couple.fg}">${pts} pts</div>`;
     block.appendChild(hdr);
 
     [couple.p1,couple.p2].forEach(p=>{
       const d=getW(p.id,currentWeek);
-      if(!d.eng||d.eng.length<7) d.eng=Array(7).fill(false);
-      const gymDone=d.gym.filter(Boolean).length, engDone=d.eng.filter(Boolean).length;
+      const gymDone=d.gym.filter(Boolean).length,engDone=d.eng.filter(Boolean).length;
       const DAYS=['S','T','Q','Q','S','S','D'];
-      const sec=document.createElement('div'); sec.className='person-section';
+      const sec=el('div','person-section');
       sec.innerHTML=`
         <div class="person-label">
           <div class="avatar" style="background:${p.bg};color:${p.fg}">${p.initials}</div>
           <span class="pname">${p.name}</span><span class="pcourse">${p.course}</span>
         </div>
         <div class="cat-row">
-          <div class="cat-left"><span class="cat-label">Academia (${gymDone}/${GYM_GOAL}x)</span><span class="pts-tag">casal: 1pt com 24+/mês</span></div>
+          <div class="cat-left"><span class="cat-label">Academia (${gymDone}/${GYM_GOAL}x)</span><span class="pts-tag">casal: 1pt c/ 24+/mês</span></div>
           <div class="check-group">${[0,1,2].map(i=>`<button class="check-btn ${d.gym[i]?'done':''}" onclick="toggleGym('${p.id}',${i})">${d.gym[i]?'✓':'·'}</button>`).join('')}</div>
         </div>
         <div class="cat-row">
@@ -305,53 +371,50 @@ function renderRegistro() {
       block.appendChild(sec);
     });
 
-    const barSec=document.createElement('div'); barSec.className='gym-bar-wrap';
-    barSec.innerHTML=`<div class="bar-header"><span>Academia do casal — mês ${m}</span><span>${coupleGym}/${COUPLE_GYM_MONTH}</span></div><div class="bar-track"><div class="bar-fill${gymPct>=100?'':gymPct>=60?' warn':' bad'}" style="width:${gymPct}%"></div></div>`;
+    const barSec=el('div','gym-bar-wrap');
+    barSec.innerHTML=`<div class="bar-header"><span>Academia do casal — mês ${m}</span><span>${gymTotal}/${COUPLE_GYM}</span></div><div class="bar-track"><div class="bar-fill${gymPct>=100?'':gymPct>=60?' warn':' bad'}" style="width:${gymPct}%"></div></div>`;
     block.appendChild(barSec);
 
-    if(isLast) {
-      const mSec=document.createElement('div'); mSec.className='month-section';
-      const mTitle=document.createElement('div'); mTitle.className='month-section-title';
+    if(last){
+      const mSec=el('div','month-section');
+      const mTitle=el('div','month-section-title');
       mTitle.innerHTML=`📅 Fechamento do mês ${m} <span>Preencha os dados finais</span>`;
       mSec.appendChild(mTitle);
 
       [couple.p1,couple.p2].forEach(p=>{
-        const bd=getB(p.id,m);
-        const metaV=parseFloat(bd.meta),realV=parseFloat(bd.real);
-        const hasData=bd.meta!==''&&bd.real!=='';
-        const hit=hasData&&!isNaN(metaV)&&!isNaN(realV)&&realV>=metaV;
-        const resultCls=hasData?(hit?'hit':'miss'):'empty';
-        const resultTxt=hasData?(hit?'✓ Atingiu':'✗ Não atingiu'):'—';
-        const bioSec=document.createElement('div'); bioSec.className='person-section'; bioSec.style.paddingBottom='4px';
-        bioSec.innerHTML=`
+        const b=getB(p.id,m);
+        const mv=parseFloat(b.meta),rv=parseFloat(b.real),hasData=b.meta!==''&&b.real!=='';
+        const hit=hasData&&!isNaN(mv)&&!isNaN(rv)&&rv>=mv;
+        const sec=el('div','person-section'); sec.style.paddingBottom='4px';
+        sec.innerHTML=`
           <div class="person-label"><div class="avatar" style="background:${p.bg};color:${p.fg}">${p.initials}</div><span class="pname">${p.name}</span></div>
           <div class="bioimp-row">
             <div class="cat-left"><span class="cat-label">⚖️ Bioimpedância</span><span class="pts-tag">1pt se real ≥ meta</span></div>
             <div class="bioimp-inputs">
-              <input type="number" step="0.1" placeholder="Meta" value="${bd.meta}" id="bio-meta-${p.id}-${m}" oninput="saveBio('${p.id}',${m})">
+              <input type="number" step="0.1" placeholder="Meta" value="${b.meta}" id="bm-${p.id}-${m}" oninput="saveBio('${p.id}',${m})">
               <span class="bioimp-sep">→</span>
-              <input type="number" step="0.1" placeholder="Real" value="${bd.real}" id="bio-real-${p.id}-${m}" oninput="saveBio('${p.id}',${m})">
-              <span class="bioimp-result ${resultCls}">${resultTxt}</span>
+              <input type="number" step="0.1" placeholder="Real" value="${b.real}" id="br-${p.id}-${m}" oninput="saveBio('${p.id}',${m})">
+              <span class="bioimp-result ${hasData?(hit?'hit':'miss'):'empty'}">${hasData?(hit?'✓ Atingiu':'✗ Não atingiu'):'—'}</span>
             </div>
           </div>`;
-        mSec.appendChild(bioSec);
+        mSec.appendChild(sec);
       });
 
       [couple.p1,couple.p2].forEach(p=>{
-        const sd=getS(p.id,sem);
-        const facSt=semStatus[sd.faculty||0], curSt=semStatus[sd.course||0];
-        const semSec=document.createElement('div'); semSec.className='person-section';
-        semSec.innerHTML=`
+        const s=getS(p.id,sem);
+        const facSt=semStatus[s.faculty||0],curSt=semStatus[s.course||0];
+        const sec=el('div','person-section');
+        sec.innerHTML=`
           <div class="person-label"><div class="avatar" style="background:${p.bg};color:${p.fg}">${p.initials}</div><span class="pname">${p.name}</span></div>
           <div class="cat-row">
             <div class="cat-left"><span class="cat-label">🎓 Faculdade</span><span class="pts-tag">1pt ao concluir</span></div>
-            <div class="status-cycle"><button class="status-pill ${facSt.cls}" onclick="cycleStatus('${p.id}',${sem},'faculty')">${facSt.label}</button></div>
+            <button class="status-pill ${facSt.cls}" onclick="cycleStatus('${p.id}',${sem},'faculty')">${facSt.label}</button>
           </div>
           <div class="cat-row">
             <div class="cat-left"><span class="cat-label">📚 Curso externo</span><span class="pts-tag">1pt ao concluir</span></div>
-            <div class="status-cycle"><button class="status-pill ${curSt.cls}" onclick="cycleStatus('${p.id}',${sem},'course')">${curSt.label}</button></div>
+            <button class="status-pill ${curSt.cls}" onclick="cycleStatus('${p.id}',${sem},'course')">${curSt.label}</button>
           </div>`;
-        mSec.appendChild(semSec);
+        mSec.appendChild(sec);
       });
 
       block.appendChild(mSec);
@@ -360,117 +423,85 @@ function renderRegistro() {
   });
 }
 
-function toggleGym(pid,idx) {
-  const d=getW(pid,currentWeek); d.gym[idx]=!d.gym[idx]; setW(pid,currentWeek,d);
-  renderRegistro();
+// ── Actions ───────────────────────────────────────────────────
+function toggleGym(pid,idx){ const d=getW(pid,currentWeek); d.gym[idx]=!d.gym[idx]; setW(pid,currentWeek,d); renderRegistro(); }
+function toggleEng(pid,idx){ const d=getW(pid,currentWeek); d.eng[idx]=!d.eng[idx]; setW(pid,currentWeek,d); renderRegistro(); }
+function saveBio(pid,m){
+  const meta=document.getElementById(`bm-${pid}-${m}`)?.value||'';
+  const real=document.getElementById(`br-${pid}-${m}`)?.value||'';
+  setB(pid,m,{meta,real}); renderRegistro();
 }
-function toggleEng(pid,idx) {
-  const d=getW(pid,currentWeek);
-  if(!d.eng||d.eng.length<7) d.eng=Array(7).fill(false);
-  d.eng[idx]=!d.eng[idx]; setW(pid,currentWeek,d);
-  renderRegistro();
-}
-function saveBio(pid,m) {
-  const meta=document.getElementById(`bio-meta-${pid}-${m}`)?.value||'';
-  const real=document.getElementById(`bio-real-${pid}-${m}`)?.value||'';
-  setB(pid,m,{meta,real});
-  renderRegistro();
-}
-function cycleStatus(pid,sem,field) {
-  const sd=getS(pid,sem); sd[field]=((sd[field]||0)+1)%3; setS(pid,sem,sd);
-  renderRegistro();
+function cycleStatus(pid,sem,field){
+  const s=getS(pid,sem); s[field]=((s[field]||0)+1)%3; setS(pid,sem,s); renderRegistro();
 }
 
-function calcScore(couple,month) {
-  const mw=monthWeeks(month), sem=semOf(month*4);
-  let pts=0, gymT=0;
-  mw.forEach(w=>[couple.p1,couple.p2].forEach(p=>{ gymT+=getW(p.id,w).gym.filter(Boolean).length; }));
-  if(gymT>=COUPLE_GYM_MONTH) pts+=1;
-  mw.forEach(w=>{
-    const d1=getW(couple.p1.id,w), d2=getW(couple.p2.id,w);
-    if((d1.eng||[]).filter(Boolean).length>=ENG_GOAL&&(d2.eng||[]).filter(Boolean).length>=ENG_GOAL) pts+=1;
-  });
-  [couple.p1,couple.p2].forEach(p=>{
-    const bd=getB(p.id,month), mv=parseFloat(bd.meta), rv=parseFloat(bd.real);
-    if(bd.meta!==''&&bd.real!==''&&!isNaN(mv)&&!isNaN(rv)&&rv>=mv) pts+=1;
-  });
-  [couple.p1,couple.p2].forEach(p=>{
-    const sd=getS(p.id,sem);
-    if((sd.faculty||0)===2) pts+=1;
-    if((sd.course||0)===2) pts+=1;
-  });
-  return pts;
-}
-
-function renderPlacar() {
-  const m=monthOf(currentWeek), mw=monthWeeks(m), sem=semOf(m*4);
+// ── Render: Placar ────────────────────────────────────────────
+function renderPlacar(){
+  const m=monthOf(currentWeek),mw=monthWks(m),sem=semOf(m*4);
   const c=document.getElementById('placar-container'); c.innerHTML='';
-  const scores=couples.map(cp=>({couple:cp,pts:calcScore(cp,m)})).sort((a,b)=>b.pts-a.pts);
+  const scores=couples.map(cp=>({cp,pts:calcScore(cp,m)})).sort((a,b)=>b.pts-a.pts);
 
-  scores.forEach((s,rank)=>{
-    const cp=s.couple;
+  scores.forEach(({cp,pts},rank)=>{
     let gymT=0;
     mw.forEach(w=>[cp.p1,cp.p2].forEach(p=>{ gymT+=getW(p.id,w).gym.filter(Boolean).length; }));
     let engW=0;
     mw.forEach(w=>{
-      const d1=getW(cp.p1.id,w),d2=getW(cp.p2.id,w);
-      if((d1.eng||[]).filter(Boolean).length>=ENG_GOAL&&(d2.eng||[]).filter(Boolean).length>=ENG_GOAL) engW++;
+      if(getW(cp.p1.id,w).eng.filter(Boolean).length>=ENG_GOAL&&
+         getW(cp.p2.id,w).eng.filter(Boolean).length>=ENG_GOAL) engW++;
     });
     let bioT=0;
     [cp.p1,cp.p2].forEach(p=>{
-      const bd=getB(p.id,m), mv=parseFloat(bd.meta), rv=parseFloat(bd.real);
-      if(bd.meta!==''&&bd.real!==''&&!isNaN(mv)&&!isNaN(rv)&&rv>=mv) bioT++;
+      const b=getB(p.id,m),mv=parseFloat(b.meta),rv=parseFloat(b.real);
+      if(b.meta!==''&&b.real!==''&&!isNaN(mv)&&!isNaN(rv)&&rv>=mv) bioT++;
     });
     let facT=0,curT=0;
     [cp.p1,cp.p2].forEach(p=>{
-      const sd=getS(p.id,sem);
-      if((sd.faculty||0)===2) facT++;
-      if((sd.course||0)===2) curT++;
+      const s=getS(p.id,sem);
+      if((s.faculty||0)===2) facT++;
+      if((s.course||0)===2)  curT++;
     });
-    const div=document.createElement('div'); div.className='score-card';
-    div.innerHTML=`
+    const card=el('div','score-card');
+    card.innerHTML=`
       <div class="score-top">
-        <div style="display:flex;align-items:center;gap:12px;">
+        <div style="display:flex;align-items:center;gap:11px;">
           <div class="score-rank" style="background:${cp.bg};color:${cp.fg}">${rank+1}</div>
           <div><div style="font-size:15px;font-weight:600">${cp.name}</div><div style="font-size:12px;color:var(--text-muted)">Mês ${m}</div></div>
         </div>
-        <div class="score-big">${s.pts} <span style="font-size:14px;font-weight:400;color:var(--text-muted)">pts</span></div>
+        <div class="score-big">${pts} <span style="font-size:13px;font-weight:400;color:var(--text-muted)">pts</span></div>
       </div>
-      <div class="score-detail"><span>Academia (${gymT}/${COUPLE_GYM_MONTH} idas)</span><strong>${gymT>=COUPLE_GYM_MONTH?1:0} pt</strong></div>
+      <div class="score-detail"><span>Academia (${gymT}/${COUPLE_GYM})</span><strong>${gymT>=COUPLE_GYM?1:0} pt</strong></div>
       <div class="score-detail"><span>Inglês — semanas ambos 7x (${engW})</span><strong>${engW} pts</strong></div>
       <div class="score-detail"><span>Bioimpedância atingida</span><strong>${bioT} pts</strong></div>
       <div class="score-detail"><span>Faculdade concluída (sem. ${sem})</span><strong>${facT} pts</strong></div>
       <div class="score-detail"><span>Curso externo concluído (sem. ${sem})</span><strong>${curT} pts</strong></div>`;
-    c.appendChild(div);
+    c.appendChild(card);
   });
-
   if(scores[0].pts===scores[1].pts){
-    const t=document.createElement('div'); t.className='tie-note';
-    t.textContent='Empate este mês — cada casal custeia o próprio programa.';
+    const t=el('div','tie-note'); t.textContent='Empate — cada casal custeia o próprio programa.';
     c.appendChild(t);
   }
 }
 
-function renderTrilha() {
+// ── Render: Trilha ────────────────────────────────────────────
+function renderTrilha(){
   const c=document.getElementById('trilha-container'); c.innerHTML='';
   couples.forEach(couple=>{
     ['gym','eng'].forEach(type=>{
-      const title=document.createElement('div'); title.className='trail-section-title';
+      const title=el('div','trail-section-title');
       title.textContent=`${couple.name} — ${type==='gym'?'academia':'inglês'}`;
       c.appendChild(title);
       [couple.p1,couple.p2].forEach(p=>{
-        const wrap=document.createElement('div'); wrap.className='trail-person';
-        const lbl=document.createElement('div'); lbl.className='trail-person-label'; lbl.textContent=p.name;
-        wrap.appendChild(lbl);
-        const row=document.createElement('div'); row.className='trail-row';
+        const wrap=el('div','trail-person');
+        const lbl=el('div','trail-person-label'); lbl.textContent=p.name; wrap.appendChild(lbl);
+        const row=el('div','trail-row');
         for(let w=1;w<=TOTAL_WEEKS;w++){
-          const dot=document.createElement('div'); dot.className='tdot'; dot.textContent=w;
+          const dot=el('div','tdot'); dot.textContent=w;
           if(w>currentWeek) dot.classList.add('future');
           else if(w===currentWeek) dot.classList.add('current');
-          else {
+          else{
             const d=getW(p.id,w);
             if(type==='gym'){const g=d.gym.filter(Boolean).length;dot.classList.add(g>=3?'full':g>0?'partial':'empty');}
-            else{const e=(d.eng||[]).filter(Boolean).length;dot.classList.add(e>=7?'full':e>0?'partial':'empty');}
+            else{const e=d.eng.filter(Boolean).length;dot.classList.add(e>=7?'full':e>0?'partial':'empty');}
           }
           row.appendChild(dot);
         }
@@ -478,14 +509,14 @@ function renderTrilha() {
       });
     });
   });
-  const legend=document.createElement('div'); legend.className='legend';
-  legend.innerHTML='<span><i style="background:#9FE1CB"></i>Meta cumprida</span><span><i style="background:#FAC775"></i>Parcial</span><span><i style="background:#F0997B"></i>Não fez</span><span><i style="background:#e0dedd"></i>Futuro</span>';
+  const legend=el('div','legend');
+  legend.innerHTML='<span><i style="background:#9FE1CB"></i>Cumprida</span><span><i style="background:#FAC775"></i>Parcial</span><span><i style="background:#F0997B"></i>Não fez</span><span><i style="background:#e0dedd"></i>Futuro</span>';
   c.appendChild(legend);
 }
 
-// ── Boot ────────────────────────────────────────────────────────
-(async ()=>{
-  await loadDB();
+// ── Boot ──────────────────────────────────────────────────────
+(async()=>{
+  await loadRemote();
   document.getElementById('loading').style.display='none';
   renderWeek();
 })();
